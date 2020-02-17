@@ -1,0 +1,35 @@
+The data
+
+This dataset includes results of further analysis of the Human Activity Recognition Using Smartphones Dataset Version 1.0 obtained from (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). Details of the data can be obtained from (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The zip files includes a detailed README.txt file that further describes the files included. 
+
+For the purpose of this analysis, the relevant files utilised are:
+README.txt to understand each file included;
+feature.txt for the labels of the variables
+activity_labels.txt for index of activity label for each activity
+X and y in text and train respectively for the dataset as well as relevant labels for subject and activities. 
+
+Objective
+The objective of the dataset is to present the averages of each variable representing mean and standard deviation of each measurements grouped by subject and activity.
+
+Processing carried out
+The X and y files in test and train are combined so that the relevant labels (activity and subject) are in the same file. 
+The resulting files from train and test are then merged to create on dataset with 10297 observations (rows) with 7351 from train and 2946 from test. The set has 561 variables corresponding go the 561 features in the feature.txt file. 
+As column called "activity_desc" is added by merging activity_labels and this dataset using look up so that the activty being observed is included in an easy to understand way.
+The variable (column) labels are not intuitive. Therefore, the column names are also changed to the actual feature as described in the feature.txt file. 
+Variables representing mean and standard deviation are extracted into a new dataset. 
+The mean is then calculated for each extracted variable for each unique combination of activity and subject. 
+
+
+The output
+The output is a table with 180 rows and 84 columns 
+
+Each row represents an average of the relevant variable grouped by subject and activity type. For example: Row 1 - represents the averages of all observations for extracted variables for subject 1 for walking activity. 
+
+The columns/variable are as follows
+Activity_Code: the numeric code representing the activity type (ref: activity_labels.txt) (1:6)
+Activity_desc: character description of activity 
+subject: numeric code representing the subject undertaking the test (1:20)
+columns 5:83 - titles detailing the variable being measured/calculated. Details please refer to "feature selection.txt" in the original zip file. 
+
+
+
